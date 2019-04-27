@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'departaments#index'
-
+  root 'employees#index'
+  devise_for :users
   resources :departaments
   resources :employees
-  devise_for :users
 
 end

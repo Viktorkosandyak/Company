@@ -1,5 +1,5 @@
 = simple_form_for(@employee, html: { class: 'form-group' }) do |f|
-  = f.input :name, placeholder: 'name'
-  = f.input :departament_id, placeholder: 'departament_id' 
+  = f.input :name, label: 'name', error: 'name is mandatory, please specify one and minimum: 4',  input_html: { maxlength: 20 },required: true
+  = f.select :departament_id, Departament.all.pluck(:name, :id)
   = f.input :active, inline_label: 'Active'
   = f.button :submit, class: 'btn btn-success'

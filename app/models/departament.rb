@@ -1,4 +1,4 @@
 class Departament < ApplicationRecord
-  has_many :employees
-  # validates_presence_of :name
+  has_many :employees, :dependent => :destroy
+  validates_presence_of :name
 end

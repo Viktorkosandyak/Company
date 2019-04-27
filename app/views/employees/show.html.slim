@@ -1,0 +1,8 @@
+p
+  strong Name:
+  = @employee.name
+= link_to 'Edit', edit_employee_path(@employee), class: 'btn btn-success mx-1'
+= link_to 'Back', employees_path, class: 'btn btn-success mx-1'
+= link_to 'Destroy', employee_path(@employee),                     
+  method: :delete,
+  data: { confirm: 'Are you sure?' }, class: 'btn btn-danger mx-1'

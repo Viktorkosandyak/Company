@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-
+  http_basic_authenticate_with name: 'viktor', password: 'qwertyuiop'
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -7,7 +7,7 @@ class EmployeesController < ApplicationController
   end
 
   def index
-    @employees = Employee.all
+    @employees  = Employee.search(params[:search]).paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -17,9 +17,7 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    @employee = Employee.find(params[:id])
     @employee = Employee.new(employee_params)
-    binding.pry
     if @employee.save
     redirect_to @employee
     else

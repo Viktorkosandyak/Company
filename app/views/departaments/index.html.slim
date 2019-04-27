@@ -1,0 +1,23 @@
+.container
+  h1 Departaments
+  br/
+  = link_to 'New Departament',  new_departament_path, class: 'btn btn-success'
+  br/
+  br/
+  table.table.table-hover.table-dark
+    tr
+      th Id
+      th Name
+      th Actions
+    - @departaments.each do |departament|
+      tr
+        td= departament.id
+        td= departament.name
+        td
+          = link_to 'Show', departament_path(departament), class: 'btn btn-success'
+          = link_to 'Edit', edit_departament_path(departament), class: 'btn btn-primary'
+          = link_to 'Destroy', departament_path(departament),            \
+            method: :delete,                                             \
+            data: { confirm: 'Are you sure?' } , class: 'btn btn-danger' 
+  br/
+  = will_paginate @departaments, renderer: WillPaginate::ActionView::BootstrapLinkRenderer

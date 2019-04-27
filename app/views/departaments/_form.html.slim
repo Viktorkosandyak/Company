@@ -1,3 +1,3 @@
 = simple_form_for(@departament, html: { class: 'form-group' }) do |f|
-  = f.input :name, placeholder: 'name'
+  = f.input :name, placeholder: 'name', error: 'name is mandatory, please specify one'
   = f.button :submit, class: 'btn btn-success'
