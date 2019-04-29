@@ -19,23 +19,23 @@ class DepartamentsController < ApplicationController
   def create
     @departament = Departament.new(departament_params)
     if @departament.save
-    redirect_to @departament
+    redirect_to @departament, success: "Departament successfully create"
     else
-      render 'new'
+      render 'new', danger: "Departament not updated"
     end
   end
 
   def update
     if @departament.update(departament_params)
-      redirect_to @departament
+      redirect_to @departament, success: "Departament successfully update"
     else
-      render 'edit'
+      render 'edit', danger: "Departament not updated"
     end
   end
 
   def destroy
     @departament.destroy
-    redirect_to departaments_path
+    redirect_to departaments_path, danger: "Departament successfully delete"
   end
 
   private

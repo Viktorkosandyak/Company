@@ -5,6 +5,6 @@
   Departament.create!(name: Faker::Job.position)
 end
 
-80.times do
+90.times do
   Employee.create!(name: Faker::Name.name, active: true , departament_id: Departament.all.ids.sample)
 end

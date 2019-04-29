@@ -18,23 +18,23 @@ class EmployeesController < ApplicationController
   def create
     @employee = Employee.new(employee_params)
     if @employee.save
-    redirect_to @employee
+    redirect_to @employee, success: "Employee successfully create"
     else
-      render 'new'
+      render 'new', danger: "Employee not updated"
     end
   end
 
   def update
     if @employee.update(employee_params)
-      redirect_to @employee
+      redirect_to @employee, success: "Employee successfully update"
     else
-      render 'edit'
+      render 'edit', danger: "Employee not updated"
     end
   end
 
   def destroy
     @employee.destroy
-    redirect_to employees_path
+    redirect_to employees_path, danger: "Employee successfully delete"
   end
 
   private
@@ -46,5 +46,4 @@ class EmployeesController < ApplicationController
     def set_employee
       @employee = Employee.find(params[:id])
     end
-
 end
