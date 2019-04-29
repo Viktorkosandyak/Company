@@ -1,8 +1,9 @@
+= render partial: 'layouts/navbar'
 p
   strong Name:
   = @departament.name
 = link_to 'Edit', edit_departament_path(@departament), class: 'btn btn-success mx-1'
 = link_to 'Back', departaments_path, class: 'btn btn-success mx-1'
-= link_to 'Destroy', departament_path(@departament),          
+= link_to 'Destroy', departament_path(@departament),
   method: :delete,
   data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'

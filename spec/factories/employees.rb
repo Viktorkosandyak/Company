@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :employee do
-      first_name  { Faker::Name.first_name }
-      active    { false }
-      departament_id  { Faker::Name.departament_id }
+    name  { Faker::Name.name }
+    active    { false }
+    departament_id  {  FactoryBot.create(:departament).id }
   end
 end

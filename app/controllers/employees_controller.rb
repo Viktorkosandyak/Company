@@ -1,7 +1,6 @@
 class EmployeesController < ApplicationController
-  http_basic_authenticate_with name: 'viktor', password: 'qwertyuiop'
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   def new
     @employee = Employee.new
   end

@@ -1,3 +1,4 @@
+= render partial: 'layouts/navbar'
 .container
   h1 Employees
   br/
@@ -22,7 +23,7 @@
           = link_to 'Show', employee_path(employee), class: 'btn btn-success'
           = link_to 'Edit', edit_employee_path(employee), class: 'btn btn-primary'
           = link_to 'Destroy', employee_path(employee),
-          
+
             method: :delete,
             data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
   = will_paginate @employees, renderer: WillPaginate::ActionView::BootstrapLinkRenderer

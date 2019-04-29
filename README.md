@@ -1,24 +1,14 @@
-# README
+# Company Application
+### Coverage report for RSpec 163 / 166 LOC (98.19%) covered.
+## Dependencies
+* Ruby version - 2.5.1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Rails version - 5.2.3
 
-Things you may want to cover:
+* System dependencies - Postgresql
 
-* Ruby version
+## Configuration
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Database
+* `bundle exec rails db:create && rails db:migrate`
+* To seed database `bundle exec rails db:seed`

@@ -1,13 +1,13 @@
 class DepartamentsController < ApplicationController
-
   before_action :set_departament, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def new
     @departament = Departament.new
   end
 
   def index
-    @departaments = Departament.paginate(:page => params[:page], per_page:5)
+    @departaments  = Departament.search(params[:search]).paginate(page: params[:page], per_page: 5)
   end
 
   def show
@@ -47,5 +47,4 @@ class DepartamentsController < ApplicationController
     def set_departament
       @departament = Departament.find(params[:id])
     end
-
 end
