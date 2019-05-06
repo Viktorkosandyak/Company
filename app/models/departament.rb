@@ -4,9 +4,10 @@ class Departament < ApplicationRecord
 
   def self.search(query_value)
     if query_value.present?
-      Departament.where(["name LIKE ?", "#{query_value.upcase}%"])
+      Departament.where(["lower(name) LIKE ?", "#{query_value.downcase}%"])
     else
       Departament.all
     end
   end
+
 end

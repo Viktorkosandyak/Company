@@ -4,11 +4,10 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
     span.navbar-toggler-icon
   #navbarNavDropdown.collapse.navbar-collapse
     ul.nav.navbar-nav.navigation
-       li = link_to 'All Departaments', departaments_path
-       li = link_to 'All Employees',  employees_path
-    ul.nav.navbar-nav.navigation
            - if user_signed_in?
              li.nav-item.us
+              li = link_to 'All Departaments', departaments_path
+              li = link_to 'All Employees',  employees_path
               li = link_to('Logout', destroy_user_session_path, method: :delete)
               li = link_to current_user.email, edit_user_registration_path
            - else

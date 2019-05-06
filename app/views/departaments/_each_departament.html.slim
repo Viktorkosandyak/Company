@@ -1,0 +1,10 @@
+- @departaments.each do |departament|
+  tr
+    td= departament.id
+    td= departament.name
+    td
+      = link_to 'Show', departament_path(departament), class: 'btn btn-success'
+      = link_to 'Edit', edit_departament_path(departament), class: 'btn btn-primary'
+      = link_to 'Destroy', departament_path(departament),            \
+        method: :delete,                                             \
+        data: { confirm: 'Are you sure?' } , class: 'btn btn-danger'

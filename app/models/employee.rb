@@ -4,7 +4,7 @@ class Employee < ApplicationRecord
 
   def self.search(query_value)
     if query_value.present?
-      Employee.where(["name LIKE ?", "#{query_value.upcase}%"])
+      Employee.where(["lower(name) LIKE ?", "#{query_value.downcase}%"])
     else
       Employee.all
     end
